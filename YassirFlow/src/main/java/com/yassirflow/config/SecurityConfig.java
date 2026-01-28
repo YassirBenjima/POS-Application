@@ -1,4 +1,4 @@
-package com.yassirflow.YassirFlow.config;
+package com.yassirflow.config;
 
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.context.annotation.Bean;

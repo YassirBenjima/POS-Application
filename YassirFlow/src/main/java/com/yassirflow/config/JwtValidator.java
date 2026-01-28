@@ -1,4 +1,4 @@
-package com.yassirflow.YassirFlow.config;
+package com.yassirflow.config;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

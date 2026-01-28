@@ -1,4 +1,4 @@
-package com.yassirflow.YassirFlow.config;
+package com.yassirflow.config;
 
 public class JwtConstant {
     public static final String JWT_SECRET = "swfadsfasdfa.fasdfasdfasd.fweqwefqwe.juyjtjryrj";
