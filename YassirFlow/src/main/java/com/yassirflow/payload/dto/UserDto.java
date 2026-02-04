@@ -1,6 +1,6 @@
 package com.yassirflow.payload.dto;
 
-import com.yassirflow.model.UserRole;
+import com.yassirflow.model.enums.UserRole;
 import jakarta.validation.constraints.Email;
 import lombok.Data;
 

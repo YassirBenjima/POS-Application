@@ -1,4 +1,4 @@
-package com.yassirflow.model;
+package com.yassirflow.model.enums;
 
 public enum StoreStatus {
     ACTIVE,

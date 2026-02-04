@@ -1,5 +1,6 @@
 package com.yassirflow.model;
 
+import com.yassirflow.model.enums.UserRole;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import lombok.*;

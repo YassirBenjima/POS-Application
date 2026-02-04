@@ -1,5 +1,6 @@
 package com.yassirflow.service.impl;
 
+import com.yassirflow.model.enums.UserRole;
 import com.yassirflow.model.User;
 import com.yassirflow.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;

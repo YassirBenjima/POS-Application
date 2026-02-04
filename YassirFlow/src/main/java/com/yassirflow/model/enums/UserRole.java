@@ -1,4 +1,4 @@
-package com.yassirflow.model;
+package com.yassirflow.model.enums;
 
 public enum UserRole {
     ROLE_USER,
@@ -7,5 +7,3 @@ public enum UserRole {
     ROLE_BRANCH_MANAGER,
     ROLE_STORE_MANAGER
 }
-
-

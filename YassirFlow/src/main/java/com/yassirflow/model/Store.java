@@ -1,5 +1,6 @@
 package com.yassirflow.model;
 
+import com.yassirflow.model.enums.StoreStatus;
 import jakarta.persistence.*;
 import lombok.*;
 

@@ -2,7 +2,7 @@ package com.yassirflow.service.impl;
 
 import com.yassirflow.config.JwtProvider;
 import com.yassirflow.model.User;
-import com.yassirflow.model.UserRole;
+import com.yassirflow.model.enums.UserRole;
 import com.yassirflow.payload.dto.UserDto;
 import com.yassirflow.payload.response.AuthResponse;
 import com.yassirflow.repository.UserRepository;
