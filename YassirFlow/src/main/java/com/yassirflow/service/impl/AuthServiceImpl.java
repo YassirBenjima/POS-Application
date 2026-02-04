@@ -31,14 +31,14 @@ public class AuthServiceImpl implements AuthService {
     private final com.yassirflow.mapper.UserMapper userMapper;
 
     @Override
-    public AuthResponse register(UserDto userDto) {
+    public AuthResponse signup(UserDto userDto) {
         User isEmailExist = userRepository.findByEmail(userDto.getEmail());
         if (isEmailExist != null) {
             throw new RuntimeException("Email Is Already Used With Another Account");
         }
 
         if (userDto.getRole().equals(UserRole.ROLE_ADMIN)) {
-            throw new RuntimeException("Register doesn't allow to create an Admin account");
+            throw new RuntimeException("Signup doesn't allow to create an Admin account");
         }
 
         User createdUser = new User();
@@ -60,14 +60,14 @@ public class AuthServiceImpl implements AuthService {
 
         AuthResponse authResponse = new AuthResponse();
         authResponse.setJwt(token);
-        authResponse.setMessage("Register Success");
+        authResponse.setMessage("Signup Success");
         authResponse.setUser(userMapper.toUserDto(savedUser));
 
         return authResponse;
     }
 
     @Override
-    public AuthResponse login(UserDto userDto) {
+    public AuthResponse signin(UserDto userDto) {
         String email = userDto.getEmail();
         String password = userDto.getPassword();
         Authentication authentication = authenticate(email, password);
@@ -87,7 +87,7 @@ public class AuthServiceImpl implements AuthService {
 
         AuthResponse authResponse = new AuthResponse();
         authResponse.setJwt(token);
-        authResponse.setMessage("Login Success");
+        authResponse.setMessage("Signin Success");
         authResponse.setUser(userMapper.toUserDto(user));
 
         return authResponse;
