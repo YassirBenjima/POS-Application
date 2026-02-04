@@ -47,7 +47,7 @@ public class JwtValidator extends OncePerRequestFilter {
                 SecurityContextHolder.getContext().setAuthentication(authentication);
 
             } catch (Exception e) {
-                throw new BadCredentialsException("Invalid JWT token...");
+                throw new BadCredentialsException("The session token is invalid or has expired. Please log in again.");
             }
         }
 

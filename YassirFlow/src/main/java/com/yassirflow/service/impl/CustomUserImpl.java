@@ -23,7 +23,7 @@ public class CustomUserImpl implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User user = userRepository.findByEmail(username);
         if (user == null) {
-            throw new UsernameNotFoundException("user not found");
+            throw new UsernameNotFoundException("User with the specified identifier does not exist.");
         }
 
         GrantedAuthority authority = new SimpleGrantedAuthority(

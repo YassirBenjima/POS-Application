@@ -34,11 +34,11 @@ public class AuthServiceImpl implements AuthService {
     public AuthResponse signup(UserDto userDto) {
         User isEmailExist = userRepository.findByEmail(userDto.getEmail());
         if (isEmailExist != null) {
-            throw new RuntimeException("Email Is Already Used With Another Account");
+            throw new RuntimeException("An account with this email address already exists.");
         }
 
         if (userDto.getRole().equals(UserRole.ROLE_ADMIN)) {
-            throw new RuntimeException("Signup doesn't allow to create an Admin account");
+            throw new RuntimeException("Administrative accounts cannot be created via public registration.");
         }
 
         User createdUser = new User();
@@ -97,11 +97,11 @@ public class AuthServiceImpl implements AuthService {
         UserDetails userDetails = customUserImpl.loadUserByUsername(username);
 
         if (userDetails == null) {
-            throw new BadCredentialsException("Invalid Username");
+            throw new BadCredentialsException("Authentication failed: Invalid email or password.");
         }
 
         if (!passwordEncoder.matches(password, userDetails.getPassword())) {
-            throw new BadCredentialsException("Invalid Password");
+            throw new BadCredentialsException("Authentication failed: Invalid email or password.");
         }
 
         return new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
